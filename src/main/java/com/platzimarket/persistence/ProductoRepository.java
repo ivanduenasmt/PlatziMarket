@@ -24,7 +24,7 @@ public class ProductoRepository {
         return productoCrudRepository.findByStockLessThanAndEstado(stock,true);
     }
 
-    public List<Producto> findByPrecioVenta(int precioVenta){
+    public List<Producto> findByPrecioVenta(double precioVenta){
         return productoCrudRepository.findByPrecioVentaOrderByNombreAsc(precioVenta);
     }
 
