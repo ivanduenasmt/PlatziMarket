@@ -25,7 +25,19 @@ public class ProductoRepository {
     }
 
     public List<Producto> findByPrecioVenta(int precioVenta){
-        return productoCrudRepository.findByPrecioVentaOrderByAsc(precioVenta);
+        return productoCrudRepository.findByPrecioVentaOrderByNombreAsc(precioVenta);
+    }
+
+    public Optional<Producto> getProducto(int idProducto){
+        return productoCrudRepository.findById(idProducto);
+    }
+
+    public Producto save(Producto producto){
+        return productoCrudRepository.save(producto);
+    }
+
+    public void delete(int idProducto){
+        productoCrudRepository.deleteById(idProducto);
     }
 
 }
