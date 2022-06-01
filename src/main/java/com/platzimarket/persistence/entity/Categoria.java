@@ -3,6 +3,7 @@ package com.platzimarket.persistence.entity;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Data
 @Entity
@@ -18,4 +19,6 @@ public class Categoria {
 
     private Integer estado;
 
+    @OneToMany(mappedBy = "categoria")
+    private List<Producto> productos;
 }

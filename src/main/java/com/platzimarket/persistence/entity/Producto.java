@@ -3,6 +3,7 @@ package com.platzimarket.persistence.entity;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Data
 @Entity
@@ -28,5 +29,13 @@ public class Producto {
     private Integer stock;
 
     private Boolean estado;
+
+    @ManyToOne
+    @JoinColumn(name = "id_categoria", insertable = false, updatable = false)
+    private Categoria categoria;
+
+    @OneToMany(mappedBy = "producto")
+    private List<ComprasProducto> comprasProductoList;
+
 
 }
