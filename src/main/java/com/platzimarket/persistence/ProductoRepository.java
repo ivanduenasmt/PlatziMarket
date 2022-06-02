@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Repository
-public class ProductoRepository {
+public class ProductoRepository{
 
     private ProductoCrudRepository productoCrudRepository;
 
