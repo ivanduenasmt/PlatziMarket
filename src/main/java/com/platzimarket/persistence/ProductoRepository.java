@@ -28,7 +28,7 @@ public class ProductoRepository implements ProductRepository {
 
     @Override
     public Optional<List<Product>> getByCategory(int categoryId) {
-        List<Producto> productos = productoCrudRepository.findByIdCategoriaOrderByNombreAsc(categoryId);
+        List<Producto> productos = productoCrudRepository.findByIdCategoria(categoryId);
         return Optional.of(mapper.toProducts(productos));
     }
 
@@ -61,6 +61,5 @@ public class ProductoRepository implements ProductRepository {
     public void delete(int productId){
         productoCrudRepository.deleteById(productId);
     }
-
 
 }
